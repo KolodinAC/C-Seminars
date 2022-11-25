@@ -3,6 +3,10 @@
 int N = int.Parse(Console.ReadLine());
 int i = -N;
 
+if(N < 0)
+{
+    Console.WriteLine("Enter only positive numbers!");
+}
 while(i <= N)
 {
     Console.Write(i);
