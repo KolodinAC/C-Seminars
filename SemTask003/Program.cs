@@ -4,6 +4,11 @@ Console.WriteLine("Enter the number of the day of the week:");
 
 int number = int.Parse(Console.ReadLine());
 
+if(number < 1 | number > 7)
+{
+    Console.WriteLine("Wrong number");
+}
+
 if(number == 1)
 {
     Console.WriteLine("Monday");
