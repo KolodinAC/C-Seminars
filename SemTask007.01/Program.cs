@@ -22,7 +22,14 @@ else
     }
     else
     {
-        Console.WriteLine("Ваше число не кратно 7 и 23, остаток ");
-        Console.WriteLine(rest);
+        Console.WriteLine($"Ваше число не кратно 7 и 23, {rest} - полученный остаток"); 
     }
 }
+
+
+// Или написать так строку 25:
+
+// Console.WriteLine("Ваше число не кратно 7 и 23, остаток " + rest);
+
+// Console.WriteLine("Ваше число не кратно 7 и 23, остаток ");
+// Console.WriteLine(rest);
