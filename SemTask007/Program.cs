@@ -9,10 +9,9 @@ int rest = a % b;
 
 if(rest == 0)
 {
-    Console.WriteLine("Второе число кратно первому");
+    Console.WriteLine("Первое число число кратно второму");
 }
 else
 {
-    Console.Write("Второе число не кратно первому, остаток ");
-    Console.WriteLine(rest);
+    Console.Write("Первое число не кратно второму, остаток " + rest);
 }
