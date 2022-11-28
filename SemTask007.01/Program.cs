@@ -4,7 +4,7 @@
 Console.WriteLine("Введите желаемое число отличное от нуля:");
 
 bool isParsed = int.TryParse(Console.ReadLine(), out int number); // проверка на то ввели ли пользователь цифры или же по ошибке буквы. TryParse проверяет возможность считать цифры. bool задает переменную isParsed которая принимает значения True если получилось считать цифры или False если пользователь ввел вместо цифр буквы и система не смогла их считать.
-//int number = int.Parse(Console.ReadLine());
+//или так -  int number = int.Parse(Console.ReadLine()); - но тогда при вводе букв выскочит ошибка.
 
 if(!isParsed)
 {
