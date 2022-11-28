@@ -9,6 +9,7 @@ bool isParsed = int.TryParse(Console.ReadLine(), out int number); // прове�
 if(!isParsed)
 {
     Console.WriteLine("Введено неправильное значение, вводите числа!");
+    return;
 }
 else
 {
