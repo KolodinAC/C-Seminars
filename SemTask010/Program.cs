@@ -56,3 +56,14 @@ int GetQuarterNumberByCoordinates(int x, int y)
 
     return -1;
 }
+
+
+// метод для печати массива: 
+
+void PrintArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+    {
+        Console.WriteLine(array[i]);
+    }
+}
