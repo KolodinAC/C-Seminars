@@ -6,20 +6,28 @@
 
 Console.WriteLine("Введите номер координатной четверти");
 
+// int qNum = int.Parse(Console.ReadLine());
+
+// int InputCheck()
+// {
+//     bool isParsed = int.TryParse(Console.ReadLine(), out int qNum);
+//     if(!isParsed)
+//     {
+//         Console.WriteLine("Введены не корректные данные, пожалуйста введите цифры от 1 до 4");
+//         return -1;
+//     }
+//     else
+//     {
+//         return qNum;
+//     }
+// }
+// int qNum =  InputCheck(); 
+
+
 int qNum = int.Parse(Console.ReadLine());
 
-// bool isParsed = int.TryParse(Console.ReadLine(), out int qNum);
-// if(!isParsed)
-// {
-//     Console.WriteLine("Введены не корректные данные, пожалуйста введите цифры от 1 до 4");
-//     return -1;
-// }
-// else
-// {
-//     return qNum;
-// }
-
 string xycoordinates = GetCoordinatesByQNum(qNum);
+
 Console.WriteLine(xycoordinates);
 
 
