@@ -18,12 +18,17 @@ double InputCheck(){
 }
 
 
-
 double ax = InputCheck();
 double ay = InputCheck();
 double bx = InputCheck();
 double by = InputCheck();
 
-double ab = Math.Sqrt((bx-ax)*(bx-ax) + (by-ay)*(by-ay)); 
+double GetDistanceBetweeTwoPoints (double ax, double ay, double bx, double by)
+{
+    double ab = Math.Sqrt((bx-ax)*(bx-ax) + (by-ay)*(by-ay)); 
+    return ab;
+}
 
-Console.WriteLine(ab);
+double result = GetDistanceBetweeTwoPoints(ax, ay, bx, by);
+
+Console.WriteLine(result);
