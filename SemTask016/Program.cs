@@ -1,6 +1,25 @@
 ﻿// Задача 26: Напишите программу, которая выводит массив из 8 элементов, 
 // заполненный нулями и единицами в случайном порядке.
 
+int userLength = UserInput();
+int[] array = new int[userLength];
+FillArray(array);
+PrintArray(array);
+
+
+// Methods:
+
+int UserInput()
+{
+    System.Console.WriteLine("Введите длину массива:");
+    bool isParsed = int.TryParse(Console.ReadLine(), out int number);
+    if (!isParsed || number < 1)
+    {
+        Console.WriteLine("Incorrect number");
+        
+    }
+    return number;
+}
 
 void FillArray(int[] collection)
 {
@@ -23,8 +42,3 @@ void PrintArray(int[] col)
         position++;
     }
 }
-
-int[] array = new int[8];
-
-FillArray(array);
-PrintArray(array);
