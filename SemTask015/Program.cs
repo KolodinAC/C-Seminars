@@ -4,7 +4,7 @@
 
 int number = UserUnput();
 
-int result = GetProdOfNumbersInInterval(number);
+int result = GetCountOfDigits(number);
 
 Console.WriteLine(result);
 
@@ -23,10 +23,11 @@ int UserUnput()
 
 int GetCountOfDigits(int number)
 {
-    int prod = 1;
-    for (var i = 1; i <= number; i++)
+    int count = 0;
+    while (number != 0)
     {
-        prod = prod * i;
+        number = number / 10;
+        count++;
     }
-    return prod;
+    return count;
 }
