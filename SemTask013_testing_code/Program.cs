@@ -1,56 +1,23 @@
 ﻿//Задача 24: Напишите программу, которая принимает на вход число
 // (А) и выдаёт сумму чисел от 1 до А.
-//7 -> 28 4 -> 10 8 -> 36
-/*bool isParsed = int.TryParse(Console.ReadLine(), out int number);
 
-if (!isParsed || number < 1)
-{
-    Console.WriteLine("Incorrect number");
-    return;
-}
 
+int number = UserUnput();
 int sum = GetSumOfNumbersInInterval(number);
-Console.WriteLine(sum);*/
+Console.WriteLine(sum);
 
-void TestPositiveGetSumOfNumbersInInterval()
+
+int UserUnput()
 {
-    int[] numbers = new int[] { 1, 2, 3, 4 };
-
-    int[] expected = new int[] { 1, 3, 6, 10 };
-
-    for (var i = 0; i < numbers.Length; i++)
+    System.Console.WriteLine("Введите число:");
+    bool isParsed = int.TryParse(Console.ReadLine(), out int number);
+    if (!isParsed || number < 1)
     {
-        int actual = GetSumOfNumbersInInterval(numbers[i]);
-
-        if (actual != expected[i])
-        {
-            Console.WriteLine($"Ожидали получить {expected[i]} а получили {actual}");
-        }
-        else
-        {
-            Console.WriteLine("okay");
-        }
+        Console.WriteLine("Incorrect number");
+        
     }
+    return number;
 }
-
-// void Test()
-// {
-//     int[] lengths = new int[] { 1, 2, 3, 4 };
-
-//     int[] expected = new int[] { 1, 2, 3, 4 };
-
-//     for (var i = 0; i < lengths.Length; i++)
-//     {
-//         int[] actual = Fill(lengths[i]);
-//         if (expected[i] == actual.Length)
-//         {
-
-//         }
-//     }
-// }
-int number = 6;
-int result = GetSumOfNumbersInInterval(number);
-System.Console.WriteLine(result);
 
 int GetSumOfNumbersInInterval(int number)
 {
