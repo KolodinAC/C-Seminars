@@ -2,17 +2,17 @@
 
 
 
-int number = UserUnput();
+double number = UserInput();
 
-int product = GetProdOfNumbersInInterval(number);
+double product = GetProdOfNumbersInterval(number);
 
 Console.WriteLine(product);
 
 
-int UserUnput()
+double UserInput()
 {
     System.Console.WriteLine("Введите число:");
-    bool isParsed = int.TryParse(Console.ReadLine(), out int number);
+    bool isParsed = double.TryParse(Console.ReadLine(), out double number);
     if (!isParsed || number < 1)
     {
         Console.WriteLine("Incorrect number");
@@ -21,9 +21,9 @@ int UserUnput()
     return number;
 }
 
-int GetProdOfNumbersInInterval(int number)
+double GetProdOfNumbersInterval(double number)
 {
-    int prod = 1;
+    double prod = 1;
     for (var i = 1; i <= number; i++)
     {
         prod = prod * i;
