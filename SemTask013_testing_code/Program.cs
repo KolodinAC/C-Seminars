@@ -48,8 +48,9 @@ void TestPositiveGetSumOfNumbersInInterval()
 //         }
 //     }
 // }
-
+int number = 6;
 int result = GetSumOfNumbersInInterval(number);
+System.Console.WriteLine(result);
 
 int GetSumOfNumbersInInterval(int number)
 {
