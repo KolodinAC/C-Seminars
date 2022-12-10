@@ -49,7 +49,7 @@ int[] GenerateArray(int min, int max, int length)
     return array;
 }
 
-int GetCountOfEvenNumbers(int[] collection) // метод вычленяет из массива положительные числа и суммирует их
+int GetCountOfEvenNumbers(int[] collection)
 {
     int count = 0;
     for (var i = 0; i < collection.Length; i++)
@@ -64,5 +64,5 @@ int GetCountOfEvenNumbers(int[] collection) // метод вычленяет и�
 
 void PrintArray(int[] collection)
 {
-    Console.WriteLine("[{0}]", string.Join(", ", collection)); // string.Join создает из массива строку, первый агрумент является разделительным знаком между элементами (в данном случае запятая), второй аргумент это сам массив, а ноль в начале строки в скобках показывает куда поставить следующую за ним конструкцию string.Join
+    Console.WriteLine("[{0}]", string.Join(", ", collection));
 }
