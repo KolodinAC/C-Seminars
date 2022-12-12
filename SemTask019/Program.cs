@@ -24,12 +24,6 @@ else
 
 
 
-
-
-
-
-
-
 int UserInput(string msg)
 {
     Console.Write(msg);
