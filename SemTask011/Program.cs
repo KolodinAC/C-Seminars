@@ -1,7 +1,8 @@
 ﻿// Напишите программу, которая принимает на вход
 // координаты двух точек и находит расстояние между ними в 2D пространстве.
 
-double InputCheck(){
+double InputCheck()
+{
     Console.WriteLine("Введите координаты двух точек на плоскости (ax ay, bx by)");
 
     bool isNum = double.TryParse(Console.ReadLine(), out double num);
