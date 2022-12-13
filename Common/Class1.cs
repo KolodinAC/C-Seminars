@@ -37,7 +37,7 @@ public static class Helper                   // определили пабли�
 
         for (var i = 0; i < array.Length; i++)
         {
-            array[i] = random.Next(int.MinValue, int.MaxValue);
+            array[i] = random.Next(-100, 101);
         }
         return array;
     }
