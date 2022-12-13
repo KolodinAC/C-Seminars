@@ -4,18 +4,18 @@
 // [1 2 3 4 5] -> [5 4 3 2 1]
 // [6 7 3 6] -> [6 3 7 6]
 
-// Console.WriteLine(int.MaxValue);
-// int number;
-// try
-// {
-//     number = InputNumber("Введите длину массива: ");
-// }
-// catch (ArgumentException ex)
-// {
-//     Console.WriteLine(ex.Message);
-//     return;
-// }
-// int fdsfs = number + 1;
+Console.WriteLine(int.MaxValue);
+int number;
+try
+{
+    number = UserInput("Введите длину массива: ");
+}
+catch (ArgumentException ex)
+{
+    Console.WriteLine(ex.Message);
+    return;
+}
+int fdsfs = number + 1;
 
 
 int[] array = CreateRandomArray();
@@ -24,7 +24,7 @@ Console.WriteLine();
 int[] reversed = ReverseArray(array);
 PrintArray(reversed);
 
-int InputNumber(string msg)
+int UserInput(string msg)
 {
     Console.Write(msg);
     bool isNum = int.TryParse(Console.ReadLine(), out int num);
