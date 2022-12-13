@@ -18,15 +18,6 @@ PrintArray(productArray);
 
 
 
-
-
-
-
-
-
-
-
-
 int UserInput(string msg)
 {
     Console.Write(msg);
