@@ -4,66 +4,13 @@
 // [1 2 3 4 5] -> [5 4 3 2 1]
 // [6 7 3 6] -> [6 3 7 6]
 
-Console.WriteLine(int.MaxValue);
-int number;
-try
-{
-    number = UserInput("Введите длину массива: ");
-}
-catch (ArgumentException ex)
-{
-    Console.WriteLine(ex.Message);
-    return;
-}
-int fdsfs = number + 1;
+using Common;  // используем неймспейс Common для доступа к библиотеке методов Helper что мы создали в папке с проектами
+               // а если к неймспейсу через точку прописать название и тип (static) класса - using static Common.Helper то не придется обращаться к Helper в строках с вызовом методов
 
+Console.WriteLine(int.MaxValue); // просто вывели максимально возможное значение для типа данных int
 
-int[] array = CreateRandomArray();
-PrintArray(array);
+int[] array = Helper.CreateRandomArray();  // обращаемся к классу хелпер и через точку вводим наши методы из этого класса. в текущем проекте в таком случае не нужно классы по новой прописывать
+Helper.PrintArray(array);
 Console.WriteLine();
-int[] reversed = ReverseArray(array);
-PrintArray(reversed);
-
-int UserInput(string msg)
-{
-    Console.Write(msg);
-    bool isNum = int.TryParse(Console.ReadLine(), out int num);
-    if (isNum)
-    {
-        return num;
-    }
-    else
-    {
-        Console.WriteLine();
-        Console.WriteLine("Вы ввели некорректное значение");
-        return -1;
-    }
-}
-
-int[] ReverseArray(int[] array)
-{
-    int[] reversedArray = new int[array.Length];
-
-    for (var i = 0; i < array.Length; i++)
-    {
-        reversedArray[i] = array[array.Length - 1 - i];
-    }
-    return reversedArray;
-}
-
-int[] CreateRandomArray()
-{
-    Random random = new Random();
-    int[] array = new int[10];
-
-    for (var i = 0; i < array.Length; i++)
-    {
-        array[i] = random.Next(int.MinValue, int.MaxValue);
-    }
-    return array;
-}
-
-void PrintArray(int[] collection)
-{
-    Console.WriteLine("[{0}]", string.Join(", ", collection));
-}
+int[] reversed = Helper.ReverseArray(array);
+Helper.PrintArray(reversed);

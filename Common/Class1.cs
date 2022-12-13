@@ -1,7 +1,9 @@
-﻿namespace Common;
-public static class Common
-{
-    static int UserInput(string msg)
+﻿// чтобы создать данный класс библиотеку нужно в терминале корневой папки написать команду - dotnet new classlib --name "название без ковычек"
+// далее чтобы подключить данную библиотеку в проект нужно в терминале проекта написать - dotnet add reference "ссылка на файл название.csproj" - система должна ответить что подключено.
+namespace Common;                             // создали неймспейс
+public static class Helper                   // определили паблик(доступный для проектов) статик(содержащий статичные данные) класс и назвали Helper
+{           // в тело класса положили регулярно нужные нам методы подписав к ним директивы как и у класса а именно - public и static 
+    public static int UserInput(string msg)
     {
         Console.Write(msg);
         bool isNum = int.TryParse(Console.ReadLine(), out int num);
@@ -17,7 +19,7 @@ public static class Common
         }
     }
 
-    static int[] ReverseArray(int[] array)
+    public static int[] ReverseArray(int[] array)
     {
         int[] reversedArray = new int[array.Length];
 
@@ -28,7 +30,7 @@ public static class Common
         return reversedArray;
     }
 
-    static int[] CreateRandomArray()
+    public static int[] CreateRandomArray()
     {
         Random random = new Random();
         int[] array = new int[10];
@@ -40,8 +42,9 @@ public static class Common
         return array;
     }
 
-    static void PrintArray(int[] collection)
+    public static void PrintArray(int[] collection)
     {
         Console.WriteLine("[{0}]", string.Join(", ", collection));
     }
+
 }
