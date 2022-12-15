@@ -5,6 +5,8 @@ public static class Helper                   // определили пабли�
 
 {           // в тело класса положили регулярно нужные нам методы подписав к ним директивы как и у класса а именно - public и static 
 
+
+// Получение и проверка данных от пользователя:
     public static int UserInput(string msg)
     {
         Console.Write(msg);
@@ -19,6 +21,21 @@ public static class Helper                   // определили пабли�
         }
     }
 
+    public static uint UintInput(string msg)     // версия для типа данных uint - тоесть тоже что инт только входят положительные целые числа
+    {
+        Console.Write(msg);
+        bool isNum = uint.TryParse(Console.ReadLine(), out uint num);
+        if (isNum)
+        {
+            return num;
+        }
+        else
+        {
+            throw new Exception("Вы ввели неправильное число!");             // чтобы в процессе работы программы показать пользователю что он не то вводит мы можем "выбросить исключение"
+        }
+    }
+
+// Работы с массивами:
     public static int[] ReverseArray(int[] array)
     {
         int[] reversedArray = new int[array.Length];
@@ -47,6 +64,12 @@ public static class Helper                   // определили пабли�
         Console.WriteLine("[{0}]", string.Join(", ", collection));
     }
 
+    public static void PrintUintArray(uint[] collection)     // печать массива на основе uint (тобишь только с положительными целыми числами)
+    {
+        Console.WriteLine("[{0}]", string.Join(", ", collection));
+    }
+
+// Разное: 
     public static int[] GetBinaryFromDecimal(int num)    // метод позволяет преобразовать число из десятичной системы в двоичную в виде массива
     {
         int numRange = 0;
@@ -62,6 +85,20 @@ public static class Helper                   // определили пабли�
         {
             arr[i] = num % 2;
             num = num / 2;
+        }
+        return arr;
+    }
+
+    public static uint[] Fibonacci(uint userNum)                  // метод создания массива с фибоначчи по кол-ву которое ввел пользователь 
+    {
+        uint[] arr = new uint[userNum];
+
+        if (!(userNum > 1)) return arr;
+        arr[0] = 0;
+        arr[1] = 1;
+        for (int i = 2; i < userNum; i++)
+        {
+            arr[i] = arr[i - 1] + arr[i - 2];
         }
         return arr;
     }
