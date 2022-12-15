@@ -47,4 +47,22 @@ public static class Helper                   // определили пабли�
         Console.WriteLine("[{0}]", string.Join(", ", collection));
     }
 
+   public static int[] GetBinaryFromDecimal(int num)    // метод позволяет преобразовать число из десятичной системы в двоичную в виде массива
+    {
+        int numRange = 0;
+        int numTemp = num;
+        while (numTemp > 0)
+        {
+            numTemp = numTemp / 2;
+            numRange++;
+        }
+        int length = numRange;
+        int[] arr = new int[length];
+        for (int i = length - 1; i >= 0; i--)
+        {
+            arr[i] = num % 2;
+            num = num / 2;
+        }
+        return arr;
+    }
 }

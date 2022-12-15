@@ -1,21 +1,34 @@
 ﻿// Задача 42: Напишите программу, которая будет преобразовывать десятичное число в двоичное. 45 -> 101101
 
+// Решение через массив - десятичное число возвращается в виде массива:
+
 
 using static Common.Helper;
 
 int numDec = UserInput("Введите десятичное число для преобразования в двоичное: ");
-int numBin = GetBinaryFromDecimal(numDec);
-Console.WriteLine(numBin);
+int[] numBin = GetBinaryFromDecimal(numDec);
+Console.Write("Ваше число в двоичной системе: ");
+PrintArray(numBin);
 
 
-int GetBinaryFromDecimal(int num)
+
+
+
+int[] GetBinaryFromDecimal(int num)
 {
-    int newNum = 0;
-    while (num > 0)
+    int numRange = 0;
+    int numTemp = num;
+    while (numTemp > 0)
     {
-        int rest = num % 2;
-        newNum = newNum * 10 + rest;
-        num = num / 10;  
+        numTemp = numTemp / 2;
+        numRange++;
     }
-    return newNum;
+    int length = numRange;
+    int[] arr = new int[length];
+    for (int i = length - 1; i >= 0; i--)
+    {
+        arr[i] = num % 2;
+        num = num / 2;
+    }
+    return arr;
 }

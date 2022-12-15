@@ -24,9 +24,5 @@ else
 
 bool InTriangle(int a, int b, int c)      // метод проверяет теорему о том что сумма двух любых сторон треугольника не могут быть меньше третьей стороны 
 {
-    if (a + b > c && a + c > b && b + c > a)
-    {
-        return true;
-    }
-    return false;
+    return (a + b > c && a + c > b && b + c > a); 
 }
