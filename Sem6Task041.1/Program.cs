@@ -5,9 +5,23 @@
 
 using static Common.Helper;
 
-int numDec = UserInput("Введите десятичное число для преобразования в двоичное: ");
+// ! Для отлавливания ошибок используется способ с помещением блока кода где может вылететь ошибка в код Try, например:
+
+int numDec; // переменную надо объявить до try иначе переменная не будет доступна в коде
+
+try
+{
+    numDec = UserInput("Введите десятичное число для преобразования в двоичное: ");
+}
+catch(Exception ex)
+{
+    System.Console.WriteLine(ex.Message);
+    return;
+}
+
+
 string res = DecToBin(numDec);
-System.Console.WriteLine("Ваше число в двоичной системе: " + res);
+Console.WriteLine("Ваше число в двоичной системе: " + res);
 
 string DecToBin(int num) // метод записывает результат в виде строки
 {
