@@ -7,9 +7,11 @@
 using Common;  // используем неймспейс Common для доступа к библиотеке методов Helper что мы создали в папке с проектами
                // а если к неймспейсу через точку прописать название и тип (static) класса - using static Common.Helper то не придется обращаться к Helper в строках с вызовом методов
 
-Console.WriteLine(int.MaxValue); // просто вывели максимально возможное значение для типа данных int
+// Console.WriteLine(int.MaxValue); // просто вывели максимально возможное значение для типа данных int
 
-int[] array = Helper.CreateRandomArray();  // обращаемся к классу хелпер и через точку вводим наши методы из этого класса. в текущем проекте в таком случае не нужно классы по новой прописывать
+
+int userlength = Helper.UserInput("Введите желаемую длину массива: ");
+int[] array = Helper.CreateRandomArray(userlength);  // обращаемся к классу хелпер и через точку вводим наши методы из этого класса. в текущем проекте в таком случае не нужно классы по новой прописывать
 Helper.PrintArray(array);
 Console.WriteLine();
 int[] reversed = Helper.ReverseArray(array);
