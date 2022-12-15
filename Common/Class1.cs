@@ -6,7 +6,7 @@ public static class Helper                   // определили пабли�
 {           // в тело класса положили регулярно нужные нам методы подписав к ним директивы как и у класса а именно - public и static 
 
 
-// Получение и проверка данных от пользователя:
+    // Получение и проверка данных от пользователя:
     public static int UserInput(string msg)
     {
         Console.Write(msg);
@@ -35,7 +35,7 @@ public static class Helper                   // определили пабли�
         }
     }
 
-// Работы с массивами:
+    // Работы с массивами:
     public static int[] ReverseArray(int[] array)
     {
         int[] reversedArray = new int[array.Length];
@@ -47,10 +47,10 @@ public static class Helper                   // определили пабли�
         return reversedArray;
     }
 
-    public static int[] CreateRandomArray()
+    public static int[] CreateRandomArray(int length)
     {
         Random random = new Random();
-        int[] array = new int[10];
+        int[] array = new int[length];
 
         for (var i = 0; i < array.Length; i++)
         {
@@ -59,6 +59,16 @@ public static class Helper                   // определили пабли�
         return array;
     }
 
+    public static int[] CopyArray(int[] array)
+    {
+        int[] arrCopy = new int[array.Length];
+        for (int i = 0; i < array.Length; i++)
+        {
+            arrCopy[i] = array[i];
+        }
+        return arrCopy;
+    }
+    
     public static void PrintArray(int[] collection)
     {
         Console.WriteLine("[{0}]", string.Join(", ", collection));
@@ -69,7 +79,7 @@ public static class Helper                   // определили пабли�
         Console.WriteLine("[{0}]", string.Join(", ", collection));
     }
 
-// Разное: 
+    // Разное: 
     public static int[] GetBinaryFromDecimal(int num)    // метод позволяет преобразовать число из десятичной системы в двоичную в виде массива
     {
         int numRange = 0;
