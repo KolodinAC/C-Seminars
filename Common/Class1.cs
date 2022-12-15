@@ -21,7 +21,7 @@ public static class Helper                   // определили пабли�
         }
     }
 
-    public static uint UintInput(string msg)     // версия для типа данных uint - тоесть тоже что инт только входят положительные целые числа
+    public static uint UintInput(string msg)     // версия для типа данных uint (беззнаковый int) - тоесть тоже что инт только входят положительные целые числа
     {
         Console.Write(msg);
         bool isNum = uint.TryParse(Console.ReadLine(), out uint num);
