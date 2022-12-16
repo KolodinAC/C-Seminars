@@ -125,4 +125,58 @@ public static class Helper                   // определили пабли�
             }
         }
     }
+
+    public static void Print2DArray(int[,] matr)
+    {
+        for (int i = 0; i < matr.GetLength(0); i++)
+        {
+            for (int j = 0; j < matr.GetLength(1); j++)
+            {
+                System.Console.Write($"{matr[i, j]} ");
+            }
+            System.Console.WriteLine();
+        }
+    }
+
+    public static void Print2DArrayF(float[,] matr)
+    {
+        for (int i = 0; i < matr.GetLength(0); i++)
+        {
+            for (int j = 0; j < matr.GetLength(1); j++)
+            {
+                System.Console.Write($"{matr[i, j]} ");
+            }
+            System.Console.WriteLine();
+        }
+    }
+
+    public static int[,] CreateRandom2DArray(int countOfRows, int countOfColumns)
+    {
+        Random random = new Random();
+        int[,] array = new int[countOfRows, countOfColumns];
+
+        for (var i = 0; i < array.GetLength(0); i++)
+        {
+            for (var j = 0; j < array.GetLength(1); j++)
+            {
+                array[i, j] = random.Next(-10, 11);
+            }
+        }
+        return array;
+    }
+
+    public static float[,] CreateRandom2DArrayF(uint countOfRows, uint countOfColumns)
+    {
+        Random random = new Random();
+        float[,] array = new float[countOfRows, countOfColumns];
+
+        for (var i = 0; i < array.GetLength(0); i++)
+        {
+            for (var j = 0; j < array.GetLength(1); j++)
+            {
+                array[i, j] = random.Next(-10, 11);
+            }
+        }
+        return array;
+    }
 }
