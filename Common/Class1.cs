@@ -159,7 +159,7 @@ public static class Helper                   // определили пабли�
         {
             for (var j = 0; j < array.GetLength(1); j++)
             {
-                array[i, j] = random.Next(-10, 11);
+                array[i, j] = random.Next(1, 10);
             }
         }
         return array;
