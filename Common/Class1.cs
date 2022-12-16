@@ -68,7 +68,7 @@ public static class Helper                   // определили пабли�
         }
         return arrCopy;
     }
-    
+
     public static void PrintArray(int[] collection)
     {
         Console.WriteLine("[{0}]", string.Join(", ", collection));
@@ -111,5 +111,18 @@ public static class Helper                   // определили пабли�
             arr[i] = arr[i - 1] + arr[i - 2];
         }
         return arr;
+    }
+
+    // Двумерные массивы: 
+
+    public static void FillTwoDimArray(int[,] matr, int min, int max)            // метод заполняет двумерный массив рандомными числами в диапазоне от min до max
+    {
+        for (int i = 0; i < matr.GetLength(0); i++)
+        {
+            for (int j = 0; j < matr.GetLength(1); j++)
+            {
+                matr[i, j] = new Random().Next(min, max);
+            }
+        }
     }
 }
