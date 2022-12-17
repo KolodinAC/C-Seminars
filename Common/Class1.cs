@@ -179,4 +179,20 @@ public static class Helper                   // определили пабли�
         }
         return array;
     }
+
+    public static float GetElementFromCoord(float[,] matr, uint rows, uint columns)   // нахрдим значение элемента в заданном массиве по заданным координатам
+    {
+        float result = 0;
+        for (int i = 0; i < matr.GetLength(0); i++)
+        {
+            for (int j = 0; j < matr.GetLength(1); j++)
+            {
+                if (matr[i, j] == matr[rows, columns])
+                {
+                    result = matr[i, j];
+                }
+            }
+        }
+        return result;
+    }
 }
