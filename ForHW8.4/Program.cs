@@ -1,23 +1,19 @@
 ﻿// Задача 60. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
 // Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
+using static Common.Helper;
 
 Console.WriteLine($"Введите размер массива X x Y x Z: ");
-int x = InputNumbers("Введите X: ");
-int y = InputNumbers("Введите Y: ");
-int z = InputNumbers("Введите Z: ");
+int x = UserInput("Введите X: ");
+int y = UserInput("Введите Y: ");
+int z = UserInput("Введите Z: ");
 Console.WriteLine($"");
 
 int[,,] array3D = new int[x, y, z];
 CreateArray(array3D);
 WriteArray(array3D);
 
-int InputNumbers(string input)
-{
-    Console.Write(input);
-    int output = Convert.ToInt32(Console.ReadLine());
-    return output;
-}
+
 
 void WriteArray(int[,,] array3D)
 {
